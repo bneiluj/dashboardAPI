@@ -93,7 +93,7 @@ export default class Root extends Component {
             <Route path='/signup' component={Signup}  pageName="" pageDescription="" />
             <Route path='/profile' component={Profile}  pageName="Profile" pageDescription="Manage your profile" />
             <Route path='/charts' component={Charts}  pageName="Charts" pageDescription="Chartist Charts" />
-            <Route path='/images' component={Images} pageName="Images" pageDescription="A new Images container">
+            <Route path='/images' component={Images} pageName="Images" pageDescription="A new Images container"/>
 
             <Route path='/ui/general' component={Bootstrap}  pageName="General" pageDescription="Bootstrap 3" />
             <Route path='/ui/buttons' component={Buttons} pageName="Buttons" pageDescription="UI Buttons."/>

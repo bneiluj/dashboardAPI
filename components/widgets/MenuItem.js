@@ -3,8 +3,8 @@
  * All rights reserved.
  *
  * This source code is licensed under the license found in the
- * LICENSE file in the root directory of this source tree. 
- * 
+ * LICENSE file in the root directory of this source tree.
+ *
  * @providesModule MenuLink
  */
 
@@ -37,7 +37,7 @@ export default class MenuItem extends React.Component {
 	render() {
 		var iconClasses = 'm-l-md fa icon ' + this.props.icon;
     var itemClass = this.props.linkText.toLowerCase() == this.props.currentPage ? 'active' : '';
-		var badge = this.props.badgeCount ? <b className="badge bg-danger">{this.props.badgeCount}</b> : null; 
+		var badge = this.props.badgeCount ? <b className="badge bg-danger">{this.props.badgeCount}</b> : null;
 
     if (this.props.children) {
       return (

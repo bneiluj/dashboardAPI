@@ -3,8 +3,8 @@
  * All rights reserved.
  *
  * This source code is licensed under the license found in the
- * LICENSE file in the root directory of this source tree. 
- * 
+ * LICENSE file in the root directory of this source tree.
+ *
  * @providesModule Menu
  */
 
@@ -26,7 +26,7 @@ export default class Menu extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     return shallowCompare(this, nextProps, nextState);
   }
-  
+
   toggleShowHide() {
     this.setState({open:!this.state.open});
   }
@@ -39,14 +39,14 @@ export default class Menu extends Component {
            navClasses += ' hidden-xs';
         }
 
-        const {apps, schema, blocks, selectedAppIndex} = this.props; 
+        const {apps, schema, blocks, selectedAppIndex} = this.props;
 
         return (
         <aside className={classes} id="nav">
             <section className="vbox">
               <header className="header bg-danger brand-header lock-header pos-stat clearfix">
-                <a className="btn btn-link visible-xs" onClick={()=>this.toggleShowHide()} data-toggle="class:nav-off-screen,open" data-target="#nav,html"> 
-                  <i className="fa fa-bars"></i> 
+                <a className="btn btn-link visible-xs" onClick={()=>this.toggleShowHide()} data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+                  <i className="fa fa-bars"></i>
                 </a>
                 <div className="text-center tophead">
                   <img width="25" src="/dist/images/react-logo.png" /><br />
@@ -59,7 +59,7 @@ export default class Menu extends Component {
                     <nav className={navClasses}>
                       <ul className="nav">
                         <MenuItem link={'/'}  icon='fa-home' color='bg-danger' linkText='Dashboard' currentPage={this.props.currentPage}>
-                        </MenuItem>                                    
+                        </MenuItem>
                         <MenuItem link={'/'}  icon='fa-desktop' color='bg-success' linkText='UI' currentPage={this.props.currentPage}>
                             <SubMenuItem link={'/ui/general'} linkText={'General'} />
                             <SubMenuItem link={'/ui/buttons'} linkText={'Buttons'} />
@@ -84,6 +84,13 @@ export default class Menu extends Component {
                         </MenuItem>
                         <MenuItem link={'/analytics'} icon='fa-line-chart' color='bg-success' linkText='Analytics' currentPage={this.props.currentPage} />
                         <MenuItem link={'/docs'} icon='fa-book' color='bg-success' linkText='Docs' currentPage={this.props.currentPage} />
+                          <MenuItem
+                             link={'/images'}
+                             icon='fa-picture-o'
+                             color='bg-success'
+                             linkText='Images'
+                             currentPage={this.props.currentPage}
+                          />
                       </ul>
                     </nav>
                   </div>
@@ -100,10 +107,9 @@ export default class Menu extends Component {
 
 class SubMenuItem extends Component {
   render() {
-    var badge = this.props.badgeText ? <b className="badge bg-danger pull-right">{this.props.badgeText}</b> : null; 
+    var badge = this.props.badgeText ? <b className="badge bg-danger pull-right">{this.props.badgeText}</b> : null;
     return (
      <li> <Link to={this.props.link}> <i className="fa fa-angle-right"></i> {badge}<span>{this.props.linkText}</span> </Link> </li>
     );
   }
 }
-
